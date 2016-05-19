@@ -18,4 +18,4 @@
 
 # demo
 
-    ![what-weather-demo](https://raw.githubusercontent.com/chenqiushi/what-weather/dev/what-weather-demo.png)
+![what-weather-demo](https://raw.githubusercontent.com/chenqiushi/what-weather/dev/what-weather-demo.png)
