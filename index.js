@@ -14,7 +14,7 @@ var program = require('commander');
 var exec = require('child_process').exec;
 
 program
-    .version('0.0.1')
+    .version('0.0.2')
     .description('What\'s the weather like? Input: weather <city> // eg: weather Shanghai'
         + '\n  Get weather of current city? Input: weather')
     .usage('<city>')
