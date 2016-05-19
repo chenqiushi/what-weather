@@ -1,10 +1,10 @@
 # what-weather
 
-    quick, simple weather cli tool based on nodeJs
+    quick, simple weather CLI tool based on nodeJS
 
 # Installation
 
-    $ npm install what-weather -g
+    $ npm install -g what-weather
 
 # Usage
 
@@ -15,3 +15,7 @@
     $ weather
 
     // you will get weather information of your current city
+
+# Demo
+
+![what-weather-demo](https://raw.githubusercontent.com/chenqiushi/what-weather/dev/what-weather-demo.png)
