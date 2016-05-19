@@ -15,3 +15,7 @@
     $ weather
 
     // you will get weather information of your current city
+
+# demo
+
+    ![what-weather-demo](https://raw.githubusercontent.com/chenqiushi/what-weather/dev/what-weather-demo.png)
