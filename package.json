@@ -1,6 +1,6 @@
 {
   "name": "what-weather",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "quick, simple weather cli tool based on nodeJs",
   "main": "index.js",
   "bin": {
@@ -28,6 +28,6 @@
   },
   "homepage": "https://github.com/chenqiushi/what-weather#readme",
   "dependencies": {
-    "request": "^2.72.0"
+    "commander": "^2.9.0"
   }
 }
