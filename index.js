@@ -12,9 +12,13 @@
 
 var program = require('commander');
 var http = require('http');
+var package = require('./package.json');
+
+var version = package.version;
+
 
 program
-    .version('0.0.3')
+    .version(version)
     .description('What\'s the weather like? Input: weather <city> // eg: weather Shanghai'
         + '\n  Get weather of current city? Input: weather')
     .usage('<city>')
