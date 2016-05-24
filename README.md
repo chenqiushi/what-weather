@@ -1,6 +1,6 @@
 # what-weather
 
-    quick, simple weather CLI tool based on nodeJS
+    A quick, simple, beautiful weather cli tool
 
 # Installation
 

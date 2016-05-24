@@ -1,4 +1,4 @@
-#! /usr/bin/env node
+#!/usr/bin/env node
 
 /**
  * what-weather
@@ -12,6 +12,7 @@
 
 var program = require('commander');
 var exec = require('child_process').exec;
+var http = require('http');
 
 program
     .version('0.0.3')
@@ -20,7 +21,9 @@ program
     .usage('<city>')
     .parse(process.argv);
 
-getWeatherInfo(program.args);
+// Deal city name with white space, such as 'Los Angeles'
+var cityName = program.args.join('');
+getWeatherInfo(cityName);
 
 /**
  * Request wttr.in to get weather infomation
@@ -28,18 +31,26 @@ getWeatherInfo(program.args);
  * @param  {string} city name of city
  */
 function getWeatherInfo(city) {
-    var cityName = city || '';
-    var shellCommand = 'curl -4 wttr.in/' + cityName;
+    var path = city ? '/' + city : ''
 
-    exec(shellCommand, function (error, stdout, stderr) {
-        if (error) {
-            console.log(error.stack);
-            console.log('Error code: ' + error.code);
-            return;
+    var req = http.request({
+        host: 'wttr.in',
+        path: path,
+        headers: {
+            'user-agent': 'curl'
         }
+    }, function (res) {
+        res.setEncoding('utf8');
+        res.on('data', function (chunk) {
+            // Beautify output
+            var weatherInfo = chunk.replace(/Check\snew\sFeature[\s\S]*/, '');
+            console.log(weatherInfo);
+        });
+    })
 
-        // Cut unnecessary infomations then print
-        var weatherInfo = stdout.replace(/Check\snew\sFeature[\s\S]*/, '');
-        console.log(weatherInfo);
-    });
+    req.on('error', function (e) {
+        console.log(e.message)
+    })
+
+    req.end();
 }

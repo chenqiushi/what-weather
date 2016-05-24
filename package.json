@@ -1,7 +1,7 @@
 {
   "name": "what-weather",
   "version": "0.0.3",
-  "description": "quick, simple weather cli tool based on nodeJs",
+  "description": "A quick, simple, beautiful weather cli tool",
   "main": "index.js",
   "bin": {
     "weather": "index.js"
