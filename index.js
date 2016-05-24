@@ -11,7 +11,6 @@
  */
 
 var program = require('commander');
-var exec = require('child_process').exec;
 var http = require('http');
 
 program
@@ -31,7 +30,7 @@ getWeatherInfo(cityName);
  * @param  {string} city name of city
  */
 function getWeatherInfo(city) {
-    var path = city ? '/' + city : ''
+    var path = city ? '/' + city : '';
 
     var req = http.request({
         host: 'wttr.in',
@@ -46,11 +45,11 @@ function getWeatherInfo(city) {
             var weatherInfo = chunk.replace(/Check\snew\sFeature[\s\S]*/, '');
             console.log(weatherInfo);
         });
-    })
+    });
 
     req.on('error', function (e) {
-        console.log(e.message)
-    })
+        console.log(e.message);
+    });
 
     req.end();
 }
